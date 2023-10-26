@@ -33,7 +33,7 @@ public class OperacoesComTransacoesTest extends EntityManagerTest{
 
     @Test
     public void fazendoUmaRemocao() {
-        Produto produto = entityManager.find(Produto.class,3);
+        Produto produto = new Produto();
         entityManager.getTransaction().begin();
         entityManager.remove(produto);
         entityManager.getTransaction().commit();
@@ -46,6 +46,18 @@ public class OperacoesComTransacoesTest extends EntityManagerTest{
     public void fazendoUmaConsulta() {
         entityManager.getTransaction().begin();
         entityManager.find(Produto.class,4);
+        entityManager.getTransaction().commit();
+    }
+
+    @Test
+    public void realizarUmaAtualizacao() {
+        Produto produto = new Produto();
+        produto.setId(1);
+        produto.setNome("Kindle Paperwhite");
+        produto.setDescricao("Novo Kindle");
+        produto.setPreco(new BigDecimal("599.99"));
+        entityManager.getTransaction().begin();
+        entityManager.merge(produto);
         entityManager.getTransaction().commit();
     }
 }
