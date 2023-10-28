@@ -1,5 +1,7 @@
 package com.balsani.domain.model;
 
+import com.balsani.domain.model.enums.StatusPagamento;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -16,7 +18,10 @@ public class PagamentoBoleto {
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
+    @Column(name = "pedido_id")
     private Integer pedidoId;
-    private com.balsani.domain.model.enums.statusPagamento statusPagamento;
+    @Column(name = "status_pagamento")
+    private StatusPagamento status;
+    @Column(name = "codigo_barras")
     private String codigoBarras;
 }

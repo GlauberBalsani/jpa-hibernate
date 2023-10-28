@@ -1,5 +1,6 @@
 package com.balsani.domain.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -16,6 +17,7 @@ public class Estoque {
     @EqualsAndHashCode.Include
     @Id
     private Integer id;
+    @Column(name = "produto_id")
     private Integer produtoId;
     private Integer quantidade;
 }

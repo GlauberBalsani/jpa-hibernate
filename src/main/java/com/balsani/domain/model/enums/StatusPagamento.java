@@ -1,6 +1,6 @@
 package com.balsani.domain.model.enums;
 
-public enum statusPagamento {
+public enum StatusPagamento {
     PROCESSANDO,
     CANCELADO,
     RECEBIDO,
