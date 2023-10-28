@@ -1,7 +1,9 @@
 package com.balsani.domain.model;
 
 import com.balsani.domain.model.enums.StatusPedido;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,6 +14,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
+@Table(name = "pedido")
 public class Pedido {
     @EqualsAndHashCode.Include
     @Id
