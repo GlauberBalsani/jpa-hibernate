@@ -52,12 +52,60 @@ public class OperacoesComTransacoesTest extends EntityManagerTest{
     @Test
     public void realizarUmaAtualizacao() {
         Produto produto = new Produto();
+
         produto.setId(1);
         produto.setNome("Kindle Paperwhite");
         produto.setDescricao("Novo Kindle");
         produto.setPreco(new BigDecimal("599.99"));
+
         entityManager.getTransaction().begin();
         entityManager.merge(produto);
         entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Produto produtoVerficacao = entityManager.find(Produto.class,produto.getId());
+        Assertions.assertNotNull(produtoVerficacao);
+        Assertions.assertEquals("Kindle Paperwhite",produtoVerficacao.getNome());
     }
+
+    @Test
+    public void realizarUmaAtualizacaoEmObjetoGerenciado() {
+        Produto produto = entityManager.find(Produto.class,1);
+        produto.setNome("Kindle Paperwhite Segunda Geração");
+        produto.setPreco(new BigDecimal("655.54"));
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(produto);
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Produto produtoVerficacao = entityManager.find(Produto.class,produto.getId());
+
+        Assertions.assertEquals("Kindle Paperwhite Segunda Geração",produtoVerficacao.getNome());
+    }
+
+    @Test
+    public void realizarUmaInsercaoComMerge() {
+        Produto produto = new Produto();
+        produto.setId(4);
+        produto.setNome("HP 2774 DeskJet Ink Advantage");
+        produto.setDescricao(" Impressora Multifuncional, Wi-Fi, Scanner, Tecnologia de Impressão HP Thermal Inkjet, Funções: Impressão, Cópia, Digitalização ");
+        produto.setPreco(new BigDecimal("329.00"));
+
+        entityManager.getTransaction().begin();
+        entityManager.persist(produto);
+        entityManager.getTransaction().commit();
+
+        entityManager.clear();
+
+        Produto produtoVerificacao = entityManager.find(Produto.class,produto.getId());
+        Assertions.assertNotNull(produtoVerificacao);
+
+
+    }
+
+
+
 }
