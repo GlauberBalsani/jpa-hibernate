@@ -19,20 +19,28 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
+
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
+
     @Column(name = "nota_fiscal_id")
     private Integer notaFiscalId;
+
     private BigDecimal total;
+
     @Enumerated(EnumType.STRING)
     private StatusPedido status;
+
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
+
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
+
     @OneToOne
     @JoinColumn(name = "nota_fiscal_id")
     private NotaFiscal notaFiscal;

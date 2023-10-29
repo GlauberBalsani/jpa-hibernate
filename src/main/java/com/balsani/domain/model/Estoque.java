@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -18,4 +20,5 @@ public class Estoque {
     @Column(name = "produto_id")
     private Integer produtoId;
     private Integer quantidade;
+
 }
