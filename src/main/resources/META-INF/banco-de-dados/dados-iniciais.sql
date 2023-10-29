@@ -3,3 +3,9 @@ insert into produto(id, nome, descricao,preco) values (3,'Cartucho HP 664 Preto 
 
 insert into cliente(id,nome) values (1,'Glauber Balsani');
 insert into cliente(id,nome) values (2,'Samira Balsani');
+
+insert into pedido(id, cliente_id, data_pedido) values (1, 1, CURRENT_TIMESTAMP())
+
+insert into categoria(id, nome) values (1, 'Eletrônicos');
+
+

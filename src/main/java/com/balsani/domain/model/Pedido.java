@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -40,6 +41,12 @@ public class Pedido {
 
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
+
+    @OneToMany
+    private List<ItemPedido> itemPedidos;
+
+    @OneToOne(mappedBy = "pedido")
+    private PagamentoCartao pagamentoCartao;
 
 
 

@@ -21,7 +21,7 @@ public class ItemPedido {
     private Integer id;
 
 
-    private Integer pedidoId;
+    //private Integer pedidoId;
 
     @ManyToOne
     @JoinColumn(name = "pedido_id")

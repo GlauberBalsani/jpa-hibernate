@@ -17,11 +17,19 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
-    @Column(name = "categoria_pai_id")
-    private Integer categoriaPai;
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_pai_id")
+    private Categoria categoriaPai;
+
+    @OneToMany(mappedBy = "categoriaPai")
+    private List<Categoria> categorias;
+
     @ManyToMany(mappedBy = "categorias")
     private List<Produto> produtos;
+
 
 
 }
