@@ -6,6 +6,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 
 @Entity
 @Getter
@@ -20,6 +22,8 @@ public class Cliente {
     private String nome;
     @Enumerated(EnumType.STRING)
     private SexoCliente sexo;
+    @OneToMany(mappedBy = "cliente")
+    List<Pedido> pedidos;
 
 
 

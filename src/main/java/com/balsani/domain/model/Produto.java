@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Objects;
 @Getter
 @Setter
@@ -20,6 +21,11 @@ public class Produto {
     private String nome;
     private String descricao;
     private BigDecimal preco;
+    @ManyToMany
+    @JoinTable(name = "produto_categoria",
+        joinColumns = @JoinColumn(name = "produto_id"),
+        inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+    private List<Categoria> categorias;
 
     public Produto(){}
 

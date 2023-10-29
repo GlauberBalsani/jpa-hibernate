@@ -5,6 +5,8 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
@@ -18,6 +20,8 @@ public class Categoria {
     private String nome;
     @Column(name = "categoria_pai_id")
     private Integer categoriaPai;
+    @ManyToMany(mappedBy = "categorias")
+    private List<Produto> produtos;
 
 
 }
