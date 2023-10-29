@@ -1,9 +1,6 @@
 package com.balsani.domain.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -19,6 +16,7 @@ import java.math.BigDecimal;
 public class ItemPedido {
     @EqualsAndHashCode.Include
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "pedido_id")
     private Integer pedidoId;

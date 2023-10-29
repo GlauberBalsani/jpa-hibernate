@@ -1,10 +1,7 @@
 package com.balsani.domain.model;
 
 import com.balsani.domain.model.enums.StatusPagamento;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +14,7 @@ import lombok.Setter;
 public class PagamentoCartao {
     @EqualsAndHashCode.Include
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "pedido_id")
     private Integer pedidoId;

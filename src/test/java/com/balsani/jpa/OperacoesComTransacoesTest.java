@@ -53,7 +53,7 @@ public class OperacoesComTransacoesTest extends EntityManagerTest{
     public void realizarUmaAtualizacao() {
         Produto produto = new Produto();
 
-        produto.setId(1);
+
         produto.setNome("Kindle Paperwhite");
         produto.setDescricao("Novo Kindle");
         produto.setPreco(new BigDecimal("599.99"));
@@ -89,7 +89,7 @@ public class OperacoesComTransacoesTest extends EntityManagerTest{
     @Test
     public void realizarUmaInsercaoComMerge() {
         Produto produto = new Produto();
-        produto.setId(4);
+
         produto.setNome("HP 2774 DeskJet Ink Advantage");
         produto.setDescricao(" Impressora Multifuncional, Wi-Fi, Scanner, Tecnologia de Impressão HP Thermal Inkjet, Funções: Impressão, Cópia, Digitalização ");
         produto.setPreco(new BigDecimal("329.00"));

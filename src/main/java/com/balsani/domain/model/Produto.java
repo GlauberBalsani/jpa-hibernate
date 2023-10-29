@@ -15,7 +15,7 @@ import java.util.Objects;
 public class Produto {
     @EqualsAndHashCode.Include
     @Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String nome;
     private String descricao;
