@@ -19,13 +19,14 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String nome;
+
     @Enumerated(EnumType.STRING)
     private SexoCliente sexo;
+
     @OneToMany(mappedBy = "cliente")
-    List<Pedido> pedidos;
-
-
+    private List<Pedido> pedidos;
 
 
 

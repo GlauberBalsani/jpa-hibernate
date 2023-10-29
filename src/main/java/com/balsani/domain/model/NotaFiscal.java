@@ -22,6 +22,5 @@ public class NotaFiscal {
     private String xml;
     @Column(name = "data_emissao")
     private Date dataEmissao;
-    @OneToOne(mappedBy = "notaFiscal")
-    private Pedido pedido;
+
 }

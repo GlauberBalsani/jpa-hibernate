@@ -20,6 +20,10 @@ public class Pedido {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
+    private Cliente cliente;
+
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
 
@@ -37,13 +41,7 @@ public class Pedido {
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
 
-    @ManyToOne
-    @JoinColumn(name = "cliente_id")
-    private Cliente cliente;
 
-    @OneToOne
-    @JoinColumn(name = "nota_fiscal_id")
-    private NotaFiscal notaFiscal;
 
 
 
