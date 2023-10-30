@@ -13,11 +13,11 @@ A JPA é uma especificação padrão da plataforma Java para lidar com persistê
 oferecendo portabilidade entre diferentes provedores de ORM.
 
 ### Hibernate
-
-- O Hibernate é um framework de mapeamento objeto-relacional (ORM) para a linguagem Java. Ele oferece uma maneira eficiente
+O Hibernate é um framework de mapeamento objeto-relacional (ORM) para a linguagem Java. Ele oferece uma maneira eficiente
 de mapear objetos Java para tabelas de um banco de dados relacional.
 
-- Sua principal função é facilitar e simplificar a interação entre objetos Java e o banco de dados, permitindo o 
+Sua principal função é facilitar e simplificar a interação entre objetos Java e o banco de dados, permitindo o 
 armazenamento e recuperação de dados de forma orientada a objetos.
-- O Hibernate disponibiliza funcionalidades como geração de SQL, gerenciamento de transações e otimizações de desempenho, 
+
+O Hibernate disponibiliza funcionalidades como geração de SQL, gerenciamento de transações e otimizações de desempenho, 
 tornando a persistência de dados mais intuitiva e flexível para os desenvolvedores.
