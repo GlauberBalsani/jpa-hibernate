@@ -14,6 +14,11 @@ public class RemovendoEntidadesReferenciadasTest extends EntityManagerTest {
         Assertions.assertFalse(pedido.getItemPedidos().isEmpty());
 
         entityManager.getTransaction().begin();
+        /**
+         * para remover entidades que já foram referenciadas
+         * é necessário fazer uma operação em cascata excluindo
+         * tudo que estiver relacionado
+         */
         pedido.getItemPedidos().forEach(i -> entityManager.remove(i));
         entityManager.remove(pedido);
         entityManager.getTransaction().commit();
