@@ -42,6 +42,10 @@ public class Pedido {
     @Embedded
     private EnderecoEntregaPedido enderecoEntrega;
 
+    /**
+     * para listas o padrão adotado é Lazy
+     */
+
     @OneToMany
     private List<ItemPedido> itemPedidos;
 

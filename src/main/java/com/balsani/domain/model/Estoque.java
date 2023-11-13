@@ -11,7 +11,7 @@ import java.util.List;
 @Setter
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Entity
-@Table(name = "cliente")
+@Table(name = "estoque")
 public class Estoque {
     @EqualsAndHashCode.Include
     @Id

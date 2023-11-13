@@ -1,4 +1,4 @@
-### Jpa (Hibernate)
+### Jpa 
 
 A Especificação JPA (Java Persistence API) é um conjunto de interfaces e padrões que 
 define como objetos Java são mapeados para bancos de dados relacionais.
